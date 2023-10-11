@@ -134,6 +134,7 @@
 						c:RIS ?= this
 						c:CNC ?= this
 						c:NYK ?= this
+						c:NJR ?= this
 						c:PSY ?= this
 						c:MNE ?= this
 						c:OHO ?= this
