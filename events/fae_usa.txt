@@ -852,6 +852,9 @@ fae_usa.2 = {
 				set_state_owner = c:MYD
 			}
 		}
+		every_state_region = {
+			remove_claim = c:USA
+		}
 		c:GBR = {
 				annex = c:USA
 		}
