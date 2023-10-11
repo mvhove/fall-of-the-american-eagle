@@ -19,3 +19,6 @@ After the assassination of President Jackson some five years ago, acting Preside
 
 ## Steam Workshop
 [Fall of the American Eagle](https://steamcommunity.com/sharedfiles/filedetails/?id=3048845225)
+
+## Paradox Mods
+[Fall of the American Eagle](https://mods.paradoxplaza.com/mods/68449/Any)
