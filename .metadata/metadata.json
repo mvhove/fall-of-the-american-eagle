@@ -1,0 +1,13 @@
+{
+  "name" : "Fall of the American Eagle",
+  "id" : "3048845225",
+  "version" : "1.0",
+  "picture" : "thumbnail.png",
+  "supported_game_version" : "1.5.*",
+  "short_description" : "",
+  "tags" : [],
+  "relationships" : [],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}

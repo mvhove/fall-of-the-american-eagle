@@ -1,0 +1,2645 @@
+﻿namespace = acw_je_events
+
+# ACW startup
+acw_je_events.1 = {
+	type = country_event
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = csa_will_spawn_var
+				}
+				desc = acw_je_events.1.t1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = acw_je_events.1.t2
+			}
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = csa_will_spawn_var
+				}
+				desc = acw_je_events.1.d1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = acw_je_events.1.d2
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = csa_will_spawn_var
+				}
+				desc = acw_je_events.1.f1
+			}
+			triggered_desc = {
+				trigger = {
+					always = yes
+				}
+				desc = acw_je_events.1.f2
+			}
+		}
+	}
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_acw_countdown completion
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_variable = csa_will_spawn_var
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = CSA
+					origin = c:USA
+					province = p:x056BA1
+				}
+			}
+			else_if = {
+				limit = {
+					c:ALA = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = CSA
+					origin = c:USA
+					province = p:xEE9129
+				}
+			}
+			else_if = {
+				limit = {
+					c:MSP = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = CSA
+					origin = c:USA
+					province = p:x4BD19A
+				}
+			}
+			else_if = {
+				limit = {
+					c:SCR = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = CSA
+					origin = c:USA
+					province = p:x6F7B23
+				}
+			}
+			else = {
+				create_country = {
+					tag = CSA
+					origin = c:USA
+					province = p:xABCC5E
+				}
+			}
+			
+			create_diplomatic_play = {
+				target_country = c:CSA
+				type = dp_return_state
+				add_war_goal = {
+					holder = c:CSA
+					type = revoke_all_claims
+					target_country = c:USA				
+					primary_demand = yes
+				}
+			}
+			
+			random_diplomatic_play = {
+				limit = {
+					any_scope_play_involved = {
+						c:CSA = this
+					}
+				}
+				save_scope_as = acw_scope
+			}
+			
+			c:CSA = {
+				set_ruling_interest_groups = { ig_landowners }
+				activate_law = law_type:law_legacy_slavery
+				create_character = {
+					ruler = yes
+					interest_group = ig_landowners
+					ideology = ideology_slaver
+					
+				}
+			}
+			
+			if = {
+				limit = {
+					c:DEL = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:delawarean
+					create_diplomatic_pact = {
+						country = c:DEL
+						type = puppet
+					}
+				}
+				s:STATE_DELAWARE = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:DEL }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_DELAWARE.region_state:DEL
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:DEL
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:DEL = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:DEL
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:DEL }
+				}
+			}
+			if = {
+				limit = {
+					c:MYD = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:marylander
+					create_diplomatic_pact = {
+						country = c:MYD
+						type = puppet
+					}
+				}
+				s:STATE_MARYLAND = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MYD }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MARYLAND.region_state:MYD
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MYD
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MYD = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MYD
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MYD }
+				}
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:virginian
+					create_diplomatic_pact = {
+						country = c:VRA
+						type = puppet
+					}
+				}
+				s:STATE_VIRGINIA = {
+					add_claim = c:CSA
+				}
+				s:STATE_WEST_VIRGINIA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:VRA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_VIRGINIA.region_state:VRA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_WEST_VIRGINIA.region_state:VRA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:VRA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:VRA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:VRA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:VRA }
+				}
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						NOT = { has_variable = state_will_secede }
+					}
+				}
+				c:CSA = {
+					remove_primary_culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					c:KTY = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:kentuckian
+					create_diplomatic_pact = {
+						country = c:KTY
+						type = puppet
+					}
+				}
+				s:STATE_KENTUCKY = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:KTY }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_KENTUCKY.region_state:KTY
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:KTY
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:KTY = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:KTY
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:KTY }
+				}
+			}
+			if = {
+				limit = {
+					c:MSR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:missourian
+					create_diplomatic_pact = {
+						country = c:MSR
+						type = puppet
+					}
+				}
+				s:STATE_MISSOURI = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MSR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MISSOURI.region_state:MSR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MSR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MSR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MSR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MSR }
+				}
+			}
+			if = {
+				limit = {
+					c:TSS = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:tennessean
+					create_diplomatic_pact = {
+						country = c:TSS
+						type = puppet
+					}
+				}
+				s:STATE_TENNESSEE = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:TSS }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_TENNESSEE.region_state:TSS
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:TSS
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:TSS = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:TSS
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:TSS }
+				}
+			}
+			if = {
+				limit = {
+					c:NCR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:north_carolinian
+					create_diplomatic_pact = {
+						country = c:NCR
+						type = puppet
+					}
+				}
+				s:STATE_NORTH_CAROLINA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:NCR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_NORTH_CAROLINA.region_state:NCR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:NCR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:NCR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NCR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NCR }
+				}
+			}
+			if = {
+				limit = {
+					c:SCR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:south_carolinian
+					create_diplomatic_pact = {
+						country = c:SCR
+						type = puppet
+					}
+				}
+				s:STATE_SOUTH_CAROLINA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:SCR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_SOUTH_CAROLINA.region_state:SCR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:SCR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:SCR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:SCR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:SCR }
+				}
+			}
+			if = {
+				limit = {
+					c:GGA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:american_georgian
+					create_diplomatic_pact = {
+						country = c:GGA
+						type = puppet
+					}
+				}
+				s:STATE_GEORGIA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:GGA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_GEORGIA.region_state:GGA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:GGA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:GGA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:GGA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:GGA }
+				}
+			}
+			if = {
+				limit = {
+					c:ALA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:alabamian
+					create_diplomatic_pact = {
+						country = c:ALA
+						type = puppet
+					}
+				}
+				s:STATE_ALABAMA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:ALA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_ALABAMA.region_state:ALA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:ALA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:ALA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ALA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:ALA }
+				}
+			}
+			if = {
+				limit = {
+					c:MSP = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:mississippian
+					create_diplomatic_pact = {
+						country = c:MSP
+						type = puppet
+					}
+				}
+				s:STATE_MISSISSIPPI = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MSP }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MISSISSIPPI.region_state:MSP
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MSP
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MSP = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MSP
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MSP }
+				}
+			}
+			if = {
+				limit = {
+					c:LOU = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:louisianian
+					create_diplomatic_pact = {
+						country = c:LOU
+						type = puppet
+					}
+				}
+				s:STATE_LOUISIANA = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:LOU }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_LOUISIANA.region_state:LOU
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:LOU
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:LOU = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:LOU
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:LOU }
+				}
+			}
+			if = {
+				limit = {
+					c:TEX = {
+						has_variable = state_will_secede
+					}
+				}
+				c:CSA = {
+					add_primary_culture = cu:texian
+					create_diplomatic_pact = {
+						country = c:TEX
+						type = puppet
+					}
+				}
+				s:STATE_TEXAS = {
+					add_claim = c:CSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:TEX }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_TEXAS.region_state:TEX
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:TEX
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:TEX = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:TEX
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:TEX }
+				}
+			}
+			if = {
+				limit = {
+					c:MNE = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MNE
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MNE }
+				}
+			}
+			if = {
+				limit = {
+					c:NHM = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NHM
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NHM }
+				}
+			}
+			if = {
+				limit = {
+					c:VMT = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:VMT
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:VMT }
+				}
+			}
+			if = {
+				limit = {
+					c:MCU = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MCU
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MCU }
+				}
+			}
+			if = {
+				limit = {
+					c:RIS = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:RIS
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:RIS }
+				}
+			}
+			if = {
+				limit = {
+					c:CNC = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:CNC
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:CNC }
+				}
+			}
+			if = {
+				limit = {
+					c:NYK = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NYK
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NYK }
+				}
+			}
+			if = {
+				limit = {
+					c:NJR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NJR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NJR }
+				}
+			}
+			if = {
+				limit = {
+					c:PSY = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:PSY
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:PSY }
+				}
+			}
+			if = {
+				limit = {
+					c:OHO = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:OHO
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:OHO }
+				}
+			}
+			if = {
+				limit = {
+					c:INA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:INA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:INA }
+				}
+			}
+			if = {
+				limit = {
+					c:ILN = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ILN
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:ILN }
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					c:MCU = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = FSA
+					origin = c:USA
+					province = p:x211ECF
+				}
+			}
+			else_if = {
+				limit = {
+					c:PSY = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = FSA
+					origin = c:USA
+					province = p:xB00000
+				}
+			}
+			else_if = {
+				limit = {
+					c:NYK = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = FSA
+					origin = c:USA
+					province = p:x1BAD55
+				}
+			}
+			else_if = {
+				limit = {
+					c:ILN = {
+						has_variable = state_will_secede
+					}
+				}
+				create_country = {
+					tag = FSA
+					origin = c:USA
+					province = p:x1B1B01
+				}
+			}
+			else = {
+				create_country = {
+					tag = FSA
+					origin = c:USA
+					province = p:x3040C0
+				}
+			}
+
+			create_diplomatic_play = {
+				target_country = c:FSA
+				type = dp_return_state
+				add_war_goal = {
+					holder = c:FSA
+					type = revoke_all_claims
+					target_country = c:USA				
+					primary_demand = yes
+				}
+			}
+
+			random_diplomatic_play = {
+				limit = {
+					any_scope_play_involved = {
+						c:FSA = this
+					}
+				}
+				save_scope_as = acw_scope
+			}
+
+			if = {
+				limit = {
+					c:MNE = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:mainer
+					create_diplomatic_pact = {
+						country = c:MNE
+						type = puppet
+					}
+				}
+				s:STATE_MAINE = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MNE }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MAINE.region_state:MNE
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MNE
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MNE = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MNE
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MNE }
+				}
+			}
+			if = {
+				limit = {
+					c:NHM = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:new_hampshirite
+					create_diplomatic_pact = {
+						country = c:NHM
+						type = puppet
+					}
+				}
+				s:STATE_NEW_HAMPSHIRE = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:NHM }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_NEW_HAMPSHIRE.region_state:NHM
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:NHM
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:NHM = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NHM
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NHM }
+				}
+			}
+			if = {
+				limit = {
+					c:VMT = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:vermonter
+					create_diplomatic_pact = {
+						country = c:VMT
+						type = puppet
+					}
+				}
+				s:STATE_VERMONT = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:VMT }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_VERMONT.region_state:VMT
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:VMT
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:VMT = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:VMT
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:VMT }
+				}
+			}
+			if = {
+				limit = {
+					c:MCU = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					create_diplomatic_pact = {
+						country = c:MCU
+						type = puppet
+					}
+				}
+				s:STATE_MASSACHUSETTS = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MCU }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MASSACHUSETTS.region_state:MCU
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MCU
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MCU = {
+						is_subject_of = c:USA
+					}
+				}
+				c:FSA = {
+					remove_primary_culture = cu:massachusettsian
+				}
+				create_diplomatic_pact = {
+					country = c:MCU
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MCU }
+				}
+			}
+			if = {
+				limit = {
+					c:RIS = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:rhode_islander
+					create_diplomatic_pact = {
+						country = c:RIS
+						type = puppet
+					}
+				}
+				s:STATE_RHODE_ISLAND = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:RIS }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_RHODE_ISLAND.region_state:RIS
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:RIS
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:RIS = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:RIS
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:RIS }
+				}
+			}
+			if = {
+				limit = {
+					c:CNC = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:connecticutian
+					create_diplomatic_pact = {
+						country = c:CNC
+						type = puppet
+					}
+				}
+				s:STATE_CONNECTICUT = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:CNC }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_CONNECTICUT.region_state:CNC
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:CNC
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:CNC = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:CNC
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:CNC }
+				}
+			}
+			if = {
+				limit = {
+					c:NYK = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:new_yorker
+					create_diplomatic_pact = {
+						country = c:NYK
+						type = puppet
+					}
+				}
+				s:STATE_NEW_YORK = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:NYK }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_NEW_YORK.region_state:NYK
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:NYK
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:NYK = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NYK
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NYK }
+				}
+			}
+			if = {
+				limit = {
+					c:NJR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:new_jerseyite
+					create_diplomatic_pact = {
+						country = c:NJR
+						type = puppet
+					}
+				}
+				s:STATE_NEW_JERSEY = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:NJR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_NEW_JERSEY.region_state:NJR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:NJR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:NJR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NJR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NJR }
+				}
+			}
+			if = {
+				limit = {
+					c:PSY = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:pennsylvanian
+					create_diplomatic_pact = {
+						country = c:PSY
+						type = puppet
+					}
+				}
+				s:STATE_PENNSYLVANIA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:PSY }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_PENNSYLVANIA.region_state:PSY
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:PSY
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:PSY = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:PSY
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:PSY }
+				}
+			}
+			if = {
+				limit = {
+					c:OHO = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:ohian
+					create_diplomatic_pact = {
+						country = c:OHO
+						type = puppet
+					}
+				}
+				s:STATE_OHIO = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:OHO }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_OHIO.region_state:OHO
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:OHO
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:OHO = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:OHO
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:OHO }
+				}
+			}
+			if = {
+				limit = {
+					c:INA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:indianian
+					create_diplomatic_pact = {
+						country = c:INA
+						type = puppet
+					}
+				}
+				s:STATE_INDIANA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:INA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_INDIANA.region_state:INA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:INA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:INA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:INA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:INA }
+				}
+			}
+			if = {
+				limit = {
+					c:ILN = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:illinoisian
+					create_diplomatic_pact = {
+						country = c:ILN
+						type = puppet
+					}
+				}
+				s:STATE_ILLINOIS = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:ILN }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_ILLINOIS.region_state:ILN
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:ILN
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:ILN = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ILN
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:ILN }
+				}
+			}
+			if = {
+				limit = {
+					c:MSR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:missourian
+					create_diplomatic_pact = {
+						country = c:MSR
+						type = puppet
+					}
+				}
+				s:STATE_MISSOURI = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MSR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MISSOURI.region_state:MSR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MSR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MSR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MSR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MSR }
+				}
+			}
+			if = {
+				limit = {
+					c:KTY = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:kentuckian
+					create_diplomatic_pact = {
+						country = c:KTY
+						type = puppet
+					}
+				}
+				s:STATE_KENTUCKY = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:KTY }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_KENTUCKY.region_state:KTY
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:KTY
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:KTY = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:KTY
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:KTY }
+				}
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:virginian
+					create_diplomatic_pact = {
+						country = c:VRA
+						type = puppet
+					}
+				}
+				s:STATE_VIRGINIA = {
+					add_claim = c:FSA
+				}
+				s:STATE_WEST_VIRGINIA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:VRA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_VIRGINIA.region_state:VRA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_WEST_VIRGINIA.region_state:VRA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MNE
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:VRA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:VRA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:VRA }
+				}
+			}
+			if = {
+				limit = {
+					c:MYD = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:marylander
+					create_diplomatic_pact = {
+						country = c:MYD
+						type = puppet
+					}
+				}
+				s:STATE_MARYLAND = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MYD }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MARYLAND.region_state:MYD
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MYD
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MYD = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MYD
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MYD }
+				}
+			}
+			if = {
+				limit = {
+					c:DEL = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:delawarean
+					create_diplomatic_pact = {
+						country = c:DEL
+						type = puppet
+					}
+				}
+				s:STATE_DELAWARE = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:DEL }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_DELAWARE.region_state:DEL
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:DEL
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:DEL = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:DEL
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:DEL }
+				}
+			}
+			if = {
+				limit = {
+					c:NCR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:north_carolinian
+					create_diplomatic_pact = {
+						country = c:NCR
+						type = puppet
+					}
+				}
+				s:STATE_NORTH_CAROLINA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:NCR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_NORTH_CAROLINA.region_state:NCR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:NCR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:NCR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:NCR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:NCR }
+				}
+			}
+			if = {
+				limit = {
+					c:TSS = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:tennessean
+					create_diplomatic_pact = {
+						country = c:TSS
+						type = puppet
+					}
+				}
+				s:STATE_TENNESSEE = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:TSS }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_TENNESSEE.region_state:TSS
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:TSS
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:TSS = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:TSS
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:TSS }
+				}
+			}
+			if = {
+				limit = {
+					c:SCR = {
+						has_variable = state_will_secede
+					}
+				}
+				c:SCR = {
+					add_primary_culture = cu:south_carolinian
+					create_diplomatic_pact = {
+						country = c:SCR
+						type = puppet
+					}
+				}
+				s:STATE_SOUTH_CAROLINA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:SCR }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_SOUTH_CAROLINA.region_state:SCR
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:SCR
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:SCR = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:SCR
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:SCR }
+				}
+			}
+			if = {
+				limit = {
+					c:GGA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:american_georgian
+					create_diplomatic_pact = {
+						country = c:GGA
+						type = puppet
+					}
+				}
+				s:STATE_GEORGIA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:GGA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_GEORGIA.region_state:GGA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:GGA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:GGA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:GGA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:GGA }
+				}
+			}
+			if = {
+				limit = {
+					c:ALA = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:alabamian
+					create_diplomatic_pact = {
+						country = c:ALA
+						type = puppet
+					}
+				}
+				s:STATE_ALABAMA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:ALA }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_ALABAMA.region_state:ALA
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:ALA
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:ALA = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:ALA
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:ALA }
+				}
+			}
+			if = {
+				limit = {
+					c:MSP = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:mississippian
+					create_diplomatic_pact = {
+						country = c:MSP
+						type = puppet
+					}
+				}
+				s:STATE_MISSISSIPPI = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:MSP }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_MISSISSIPPI.region_state:MSP
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:MSP
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:MSP = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:MSP
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:MSP }
+				}
+			}
+			if = {
+				limit = {
+					c:LOU = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:louisianian
+					create_diplomatic_pact = {
+						country = c:LOU
+						type = puppet
+					}
+				}
+				s:STATE_LOUISIANA = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:LOU }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_LOUISIANA.region_state:LOU
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:LOU
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:LOU = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:LOU
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:LOU }
+				}
+			}
+			if = {
+				limit = {
+					c:TEX = {
+						has_variable = state_will_secede
+					}
+				}
+				c:FSA = {
+					add_primary_culture = cu:texian
+					create_diplomatic_pact = {
+						country = c:TEX
+						type = puppet
+					}
+				}
+				s:STATE_TEXAS = {
+					add_claim = c:FSA
+				}
+				scope:acw_scope = {
+					add_target_backers = { c:TEX }
+					add_war_goal = {
+						holder = c:USA
+						type = return_state
+						target_state = s:STATE_TEXAS.region_state:TEX
+						primary_demand = yes
+					}	
+					add_war_goal = {
+						holder = c:TEX
+						type = revoke_all_claims
+						target_country = c:USA
+						primary_demand = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					c:TEX = {
+						is_subject_of = c:USA
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:TEX
+					type = puppet
+				}
+				scope:acw_scope = {
+					add_initiator_backers = { c:TEX }
+				}
+			}
+		}
+
+		set_global_variable = {
+			name = american_civil_war
+			value = yes
+		}
+		
+		if = {
+			limit = { exists = c:CSA }
+			add_journal_entry = {
+				type = je_acw_war
+				target = c:CSA
+			}
+			remove_modifier = missouri_compromise
+		}
+		else_if = {
+			limit = { exists = c:FSA }
+			add_journal_entry = {
+				type = je_acw_war
+				target = c:FSA
+			}
+		}
+		set_variable = union_side_acw
+	}
+
+	option = {
+		name = acw_je_events.1.a
+		default_option = yes
+	}
+	option = {
+		name = acw_je_events.1.b
+		trigger = { is_player = yes }
+
+		if = {
+			limit = { exists = c:CSA }
+			play_as = c:CSA
+		}
+		else_if = {
+			limit = { exists = c:FSA }
+			play_as = c:FSA
+		}
+	}
+}
+
+# ACW end, reconstruction start
+acw_je_events.2 = {
+	type = country_event
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = acw_je_events.2.t
+	desc = acw_je_events.2.d
+	flavor = acw_je_events.2.f
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_acw_war completion
+	}
+
+	immediate = {
+		set_variable = {
+			name = reconstruction_var
+			value = 0
+		}
+		set_variable = {
+			name = je_acw_wild_west_var
+			value = 0
+		}
+		if = {
+			limit = {
+				has_variable = csa_will_spawn_var
+			}
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+					this.state_region = {
+						has_variable = state_will_secede
+					}
+				}
+				set_state_type = unincorporated
+				add_modifier = {
+					name = unreconstructed_state
+					years = 12
+				}
+			}
+		}
+	}
+
+	option = {
+		name = acw_je_events.1.a
+		
+		add_journal_entry = {
+			type = je_acw_reconstruction
+		}
+		
+		add_journal_entry = { type = je_acw_reincorporate }		
+		if = {
+			limit = {
+				has_law = law_type:law_slavery_banned
+			}
+			add_journal_entry = {
+				type = je_acw_equality
+			}
+		}
+		else = {
+			change_variable = {
+				name = reconstruction_var
+				add = 1
+			}
+		}
+		add_journal_entry = {
+			type = je_acw_wild_wild_west
+		}
+	}
+}
+
+# Reconstruction ending event
+acw_je_events.3 = {
+	type = country_event
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = acw_je_events.3.t
+	desc = acw_je_events.3.d
+	flavor = acw_je_events.3.f
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_acw_war completion
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = acw_je_events.3.a
+		
+		if = {
+			limit = {
+				has_variable = acw_gain_african_american
+			}
+			add_primary_culture = cu:afro_american
+		}
+		# revise this if we split the JE's
+		if = {
+			limit = {
+				NOT = {
+					has_variable = acw_keep_dixie
+				}
+			}
+			remove_primary_culture = cu:dixie
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:delawarean
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:marylander
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:virginian
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:kentuckian
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:missourian
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:tennessean
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:north_carolinian
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:south_carolinian
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:american_georgian
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:alabamian
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:mississippian
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:louisianian
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				remove_primary_culture = cu:texian
+			}
+		}
+	}
+}
+
+# The Emancipation Proclamation
+acw_je_events.4 = {
+	type = country_event
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = acw_je_events.4.t
+	desc = acw_je_events.4.d
+	flavor = acw_je_events.4.f
+
+	duration = 3
+
+	trigger = {
+		# triggered on je_acw_war pulse
+		exists = c:CSA
+		exists = c:USA
+		has_law = law_type:law_slavery_banned
+		random_country = {
+			is_subject_of = c:USA
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+		NOT = { has_variable = emancipation_proclamation }
+		any_diplomatic_play = {
+			AND = {
+				any_scope_play_involved = { this = c:CSA }
+				any_scope_play_involved = { this = c:USA }
+			}
+		}
+		NOT = { exists = c:FSA } # fringe sanity check
+		NOT = { 
+			any_interest_group = {
+				has_modifier = delayed_emancipation 
+			}
+		}
+		has_variable = union_side_acw
+	}
+
+	immediate = {
+		law_type:law_slavery_banned = {
+			save_scope_as = abolition_law # use in loc with SCOPE.sLawType etc
+		}
+	}
+
+	option = {
+		name = acw_je_events.4.a # We shall save the Union!
+		default_option = yes
+
+		c:DEL = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:MYD = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:VRA = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:KTY = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:MSR = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:TSS = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:NCR = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:SCR = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:GGA = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:ALA = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:MSP = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:LOU = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		c:TEX = {
+			if = {
+				limit = {
+					is_subject_of = c:USA
+				}
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+
+		set_variable = emancipation_proclamation
+
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = enacted_emancipation # +1 opinion
+				months = normal_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = acw_je_events.4.b # Pass on immediate emancipation 
+
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = delayed_emancipation # -3 opinion [everybody hated that]
+				months = normal_modifier_time
+			}
+		}
+	}
+}

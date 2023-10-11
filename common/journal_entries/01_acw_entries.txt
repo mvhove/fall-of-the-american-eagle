@@ -1,0 +1,1712 @@
+﻿je_acw_countdown = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	immediate = {
+		set_variable = {
+			name = acw_progress_var
+			value = 0
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		has_law = law_type:law_slavery_banned
+		c:DEL = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:MYD = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:VRA = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:KTY = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:MSR = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:TSS = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:NCR = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:SCR = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:GGA = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:ALA = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:MSP = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+		c:TEX = {
+			OR = {
+				NOT = { is_subject_of = c:USA }
+				has_law = law_type:law_slavery_banned
+			}
+		}
+	}
+
+	on_complete = {
+		set_variable = je_acw_countdown_complete
+		remove_modifier = missouri_compromise
+		trigger_event = { id = slavery_law_events.7 days = 0 popup = yes }
+	}
+
+	fail = {
+		OR = {
+			# CSA
+			AND = {
+				has_law = law_type:law_slavery_banned
+				OR = {
+					c:DEL = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:MYD = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:VRA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:KTY = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:MSR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:TSS = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:NCR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:SCR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:GGA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:ALA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:MSP = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+					c:TEX = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}	
+				}
+			}
+			
+			# FSA
+			AND = {
+				OR = {
+					has_law = law_type:law_slave_trade
+					has_law = law_type:law_debt_slavery
+				}
+				OR = {
+					c:MNE = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:NHM = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:VMT = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:MCU = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:RIS = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:CNC = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:NYK = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:NJR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:PSY = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:OHO = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:INA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:ILN = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:MSR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:KTY = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:VRA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:MYD = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:DEL = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:NCR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:TSS = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:SCR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:GGA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:ALA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:MSP = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:LOU = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+					c:TEX = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = {
+				has_law = law_type:law_slavery_banned
+			}
+			set_variable = csa_will_spawn_var
+			if = {
+				limit = {
+					c:DEL = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:DEL = {
+					set_variable = state_will_secede
+				}
+				s:STATE_DELAWARE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MYD = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:MYD = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MARYLAND = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:VRA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_VIRGINIA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_WEST_VIRGINIA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:KTY = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:KTY = {
+					set_variable = state_will_secede
+				}
+				s:STATE_KENTUCKY = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MSR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:MSR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MISSOURI = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:TSS = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:TSS = {
+					set_variable = state_will_secede
+				}
+				s:STATE_TENNESSEE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:NCR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:NCR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_NORTH_CAROLINA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:SCR = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:SCR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_SOUTH_CAROLINA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:GGA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:GGA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_GEORGIA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:ALA = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:ALA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_ALABAMA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MSP = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:MSP = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MISSISSIPPI = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:TEX = {
+						AND = {
+							is_subject_of = c:USA
+							NOT = { has_law = law_type:law_slavery_banned }
+							ig:ig_landowners = { is_in_government = yes }
+						}
+					}
+				}
+				c:TEX = {
+					set_variable = state_will_secede
+				}
+				s:STATE_TEXAS = {
+					set_variable = state_will_secede
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					c:MNE = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:MNE = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MAINE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:NHM = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:NHM = {
+					set_variable = state_will_secede
+				}
+				s:STATE_NEW_HAMPSHIRE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:VMT = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:VMT = {
+					set_variable = state_will_secede
+				}
+				s:STATE_VERMONT = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MCU = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:MCU = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MASSACHUSETTS = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:RIS = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:RIS = {
+					set_variable = state_will_secede
+				}
+				s:STATE_RHODE_ISLAND = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:CNC = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:CNC = {
+					set_variable = state_will_secede
+				}
+				s:STATE_CONNECTICUT = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:NYK = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:NYK = {
+					set_variable = state_will_secede
+				}
+				s:STATE_NEW_YORK = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:NJR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:NJR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_NEW_JERSEY = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:PSY = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:PSY = {
+					set_variable = state_will_secede
+				}
+				s:STATE_PENNSYLVANIA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:OHO = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:OHO = {
+					set_variable = state_will_secede
+				}
+				s:STATE_OHIO = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:INA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:INA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_INDIANA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:ILN = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:ILN = {
+					set_variable = state_will_secede
+				}
+				s:STATE_ILLINOIS = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MSR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:MSR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MISSOURI = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:KTY = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:KTY = {
+					set_variable = state_will_secede
+				}
+				s:STATE_KENTUCKY = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:VRA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:VRA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_VIRGINIA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_WEST_VIRGINIA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MYD = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:MYD = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MARYLAND = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:DEL = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:DEL = {
+					set_variable = state_will_secede
+				}
+				s:STATE_DELAWARE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:TSS = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:TSS = {
+					set_variable = state_will_secede
+				}
+				s:STATE_TENNESSEE = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:NCR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:NCR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_NORTH_CAROLINA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:SCR = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:SCR = {
+					set_variable = state_will_secede
+				}
+				s:STATE_SOUTH_CAROLINA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:GGA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:GGA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_GEORGIA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:ALA = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:ALA = {
+					set_variable = state_will_secede
+				}
+				s:STATE_ALABAMA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:MSP = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:MSP = {
+					set_variable = state_will_secede
+				}
+				s:STATE_MISSISSIPPI = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:LOU = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:LOU = {
+					set_variable = state_will_secede
+				}
+				s:STATE_LOUISIANA = {
+					set_variable = state_will_secede
+				}
+			}
+			if = {
+				limit = {
+					c:TEX = {
+						AND = {
+							is_subject_of = c:USA
+							has_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				c:TEX = {
+					set_variable = state_will_secede
+				}
+				s:STATE_TEXAS = {
+					set_variable = state_will_secede
+				}
+			}
+		}
+		custom_tooltip = {
+			text = acw_will_happen_tt
+			trigger_event = { id = acw_je_events.1 }
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_law = law_type:law_slavery_banned
+				}
+				change_variable = {
+					name = acw_progress_var
+					add = 1
+				}
+			}
+		}
+		random_events = {
+			# American Civil War buildup
+			200 = 0
+			10 = acw_events.1 # The Abolitionist's Martyrdom
+			10 = acw_events.3 # The Wilmot Proviso
+		}
+	}
+	on_yearly_pulse = {
+		random_events = {
+			40 = 0
+			20 = acw_events.2 # The Fugitive Slave
+			20 = acw_events.5 # Bleeding Kansas
+			20 = acw_events.6 # The Caning of Charles Sumner
+		}
+	}
+
+	current_value = {
+		value = root.var:acw_progress_var
+	}
+
+	goal_add_value = {
+		value = 120
+	}
+
+	progressbar = yes
+
+	weight = 200
+
+	should_be_pinned_by_default = yes
+}
+
+je_acw_war = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	complete = {
+		custom_tooltip = {
+			text = acw_war_tt_complete
+			is_diplomatic_play_initiator = no
+			is_at_war = no
+		}
+	}
+
+	on_complete = {
+		if = {
+			limit = { 
+				has_variable = csa_will_spawn_var
+				AND = {
+					calc_true_if = {
+						amount > 16
+						country_or_subject_owns_entire_state_region = STATE_MAINE
+						country_or_subject_owns_entire_state_region = STATE_NEW_HAMPSHIRE
+						country_or_subject_owns_entire_state_region = STATE_VERMONT
+						country_or_subject_owns_entire_state_region = STATE_MASSACHUSETTS
+						country_or_subject_owns_entire_state_region = STATE_RHODE_ISLAND
+						country_or_subject_owns_entire_state_region = STATE_CONNECTICUT
+						country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+						country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+						country_or_subject_owns_entire_state_region = STATE_PENNSYLVANIA
+						country_or_subject_owns_entire_state_region = STATE_OHIO
+						country_or_subject_owns_entire_state_region = STATE_INDIANA
+						country_or_subject_owns_entire_state_region = STATE_ILLINOIS
+						country_or_subject_owns_entire_state_region = STATE_MISSOURI
+						country_or_subject_owns_entire_state_region = STATE_KENTUCKY
+						country_or_subject_owns_entire_state_region = STATE_VIRGINIA
+						country_or_subject_owns_entire_state_region = STATE_MARYLAND
+						country_or_subject_owns_entire_state_region = STATE_DELAWARE
+						country_or_subject_owns_entire_state_region = STATE_TENNESSEE
+						country_or_subject_owns_entire_state_region = STATE_NORTH_CAROLINA
+						country_or_subject_owns_entire_state_region = STATE_SOUTH_CAROLINA
+						country_or_subject_owns_entire_state_region = STATE_GEORGIA
+						country_or_subject_owns_entire_state_region = STATE_ALABAMA
+						country_or_subject_owns_entire_state_region = STATE_MISSISSIPPI
+						country_or_subject_owns_entire_state_region = STATE_LOUISIANA
+					}
+				}
+			}
+			ruler = {
+				set_variable = abraham_lincoln
+			}
+			
+			c:DEL = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:DEL
+					}
+				}
+			}
+			c:MYD = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:MYD
+					}
+				}
+			}
+			c:VRA = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:VRA
+					}
+				}
+			}
+			c:KTY = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:KTY
+					}
+				}
+			}
+			c:MSR = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:MSR
+					}
+				}
+			}
+			c:TSS = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:TSS
+					}
+				}
+			}
+			c:NCR = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:NCR
+					}
+				}
+			}
+			c:SCR = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:SCR
+					}
+				}
+			}
+			c:GGA = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:GGA
+					}
+				}
+			}
+			c:ALA = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:ALA
+					}
+				}
+			}
+			c:MSP = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:MSP
+					}
+				}
+			}
+			c:LOU = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:LOU
+					}
+				}
+			}
+			c:TEX = {
+				if = {
+					limit = {
+						is_subject_of = c:CSA
+					}
+					c:USA = {
+						annex = c:TEX
+					}
+				}
+			}
+			annex = c:CSA
+			trigger_event = { id = acw_je_events.2 }
+			}
+		else_if = {
+			limit = {
+				AND = {
+					calc_true_if = {
+						amount > 16
+						country_or_subject_owns_entire_state_region = STATE_MAINE
+						country_or_subject_owns_entire_state_region = STATE_NEW_HAMPSHIRE
+						country_or_subject_owns_entire_state_region = STATE_VERMONT
+						country_or_subject_owns_entire_state_region = STATE_MASSACHUSETTS
+						country_or_subject_owns_entire_state_region = STATE_RHODE_ISLAND
+						country_or_subject_owns_entire_state_region = STATE_CONNECTICUT
+						country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+						country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+						country_or_subject_owns_entire_state_region = STATE_PENNSYLVANIA
+						country_or_subject_owns_entire_state_region = STATE_OHIO
+						country_or_subject_owns_entire_state_region = STATE_INDIANA
+						country_or_subject_owns_entire_state_region = STATE_ILLINOIS
+						country_or_subject_owns_entire_state_region = STATE_MISSOURI
+						country_or_subject_owns_entire_state_region = STATE_KENTUCKY
+						country_or_subject_owns_entire_state_region = STATE_VIRGINIA
+						country_or_subject_owns_entire_state_region = STATE_MARYLAND
+						country_or_subject_owns_entire_state_region = STATE_DELAWARE
+						country_or_subject_owns_entire_state_region = STATE_TENNESSEE
+						country_or_subject_owns_entire_state_region = STATE_NORTH_CAROLINA
+						country_or_subject_owns_entire_state_region = STATE_SOUTH_CAROLINA
+						country_or_subject_owns_entire_state_region = STATE_GEORGIA
+						country_or_subject_owns_entire_state_region = STATE_ALABAMA
+						country_or_subject_owns_entire_state_region = STATE_MISSISSIPPI
+						country_or_subject_owns_entire_state_region = STATE_LOUISIANA
+					}
+				}
+			}
+			c:MNE = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:MNE
+					}
+				}
+			}
+			c:NHM = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:NHM
+					}
+				}
+			}
+			c:VMT = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:VMT
+					}
+				}
+			}
+			c:MCU = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:MCU
+					}
+				}
+			}
+			c:RIS = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:RIS
+					}
+				}
+			}
+			c:CNC = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:CNC
+					}
+				}
+			}
+			c:NYK = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:NYK
+					}
+				}
+			}
+			c:NJR = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:NJR
+					}
+				}
+			}
+			c:PSY = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:PSY
+					}
+				}
+			}
+			c:OHO = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:OHO
+					}
+				}
+			}
+			c:INA = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:INA
+					}
+				}
+			}
+			c:ILN = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:ILN
+					}
+				}
+			}
+			c:DEL = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:DEL
+					}
+				}
+			}
+			c:MYD = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:MYD
+					}
+				}
+			}
+			c:VRA = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:VRA
+					}
+				}
+			}
+			c:KTY = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:KTY
+					}
+				}
+			}
+			c:MSR = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:MSR
+					}
+				}
+			}
+			c:TSS = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:TSS
+					}
+				}
+			}
+			c:NCR = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:NCR
+					}
+				}
+			}
+			c:SCR = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:SCR
+					}
+				}
+			}
+			c:GGA = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:GGA
+					}
+				}
+			}
+			c:ALA = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:ALA
+					}
+				}
+			}
+			c:MSP = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:MSP
+					}
+				}
+			}
+			c:LOU = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:LOU
+					}
+				}
+			}
+			c:TEX = {
+				if = {
+					limit = {
+						is_subject_of = c:FSA
+					}
+					c:USA = {
+						annex = c:TEX
+					}
+				}
+			}
+			annex = c:FSA
+			trigger_event = { id = acw_je_events.2 }
+		}
+		else = {
+			
+		}
+	}
+
+	on_monthly_pulse = {
+		events = {
+			acw_je_events.4
+		}
+	}
+
+	should_be_pinned_by_default = yes
+	
+	can_revolution_inherit = no
+
+	# acw_events.7 fires for the FSA or CSA, but requires the je_acw_war journal to be active
+	# acw_events.8 fires for the USA, FSA or CSA, but requires the je_acw_war journal to be active
+}
+
+je_acw_reconstruction = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = acw_je_events.3 }
+		hidden_effect = { # sanity check just in case something somehow falls through the cracks
+			every_scope_state = {
+				limit = { has_modifier = unreconstructed_state }
+				remove_modifier = unreconstructed_state
+			}
+		}
+	}
+
+	current_value = {
+		value = var:reconstruction_var
+	}
+
+	goal_add_value = {
+		add = 3
+	}
+
+	timeout = 4380
+
+	should_be_pinned_by_default = yes
+
+	on_timeout = {
+		trigger_event = { id = acw_je_events.3 }
+	}
+}
+
+je_acw_reincorporate = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	complete = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = unreconstructed_state
+				is_incorporated = no
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				state_region = {
+					has_variable = state_will_secede
+				}
+				loyalist_fraction = {
+					value < 0.2
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = {
+			text = dont_lose_dixie_culture
+			set_variable = acw_keep_dixie
+		}
+		custom_tooltip = {
+			text = reconstruction_progress
+			change_variable = {
+				name = reconstruction_var
+				add = 1
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			50 = 0
+			20 = acw_followup_events.6
+			20 = acw_followup_events.7
+			20 = acw_followup_events.8
+		}
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				state_region = {
+					has_variable = state_will_secede
+				}
+			}
+		}
+	}
+
+	timeout = 4380
+}
+
+je_acw_equality = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	complete = {
+		custom_tooltip = {
+			text = acw_african_american_culture_complete_tt
+			cu:afro_american = {
+				NOT = { culture_is_discriminated_in = ROOT }
+			}
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = {
+			text = acw_african_american_culture
+			set_variable = acw_gain_african_american
+		}
+		custom_tooltip = {
+			text = reconstruction_progress
+			change_variable = {
+				name = reconstruction_var
+				add = 1
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			90 = 0
+			20 = acw_followup_events.4 # Forty Acres and a Mule
+			20 = acw_followup_events.5 # Supremacist Violence
+			20 = acw_followup_events.6 # Redeemers
+		}
+	}
+
+	timeout = 4380
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				state_region = {
+					is_homeland = cu:afro_american
+				}
+			}
+		}
+	}
+}
+
+je_acw_wild_wild_west = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		NOT = {
+			any_scope_state = {
+				devastation > 0.1
+				turmoil > 0.1
+			}
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = {
+			text = acw_no_outlaw_crisis
+		}
+		custom_tooltip = {
+			text = reconstruction_progress
+			change_variable = {
+				name = reconstruction_var
+				add = 1
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			10 = crime_events.1 # train robbery
+			10 = wild_west.1 # bank robberies
+			10 = wild_west.2 # Raids on the Iron Horse
+			10 = wild_west.3 # Gunfight at the Corral
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						any_scope_state = {
+							devastation > 0.1
+							turmoil > 0.1
+						}
+					}
+				}
+				change_variable = {
+					name = je_acw_wild_west_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	current_value = {
+		value = var:je_acw_wild_west_var
+	}
+	
+	goal_add_value = {
+		add = 60
+	}
+
+	progressbar = yes
+
+	timeout = 4380
+}

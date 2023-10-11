@@ -1,0 +1,252 @@
+﻿MCU = {
+	color = { 211 211 211 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { massachusettsian }
+	capital = STATE_MASSACHUSETTS
+}
+
+NHM = {
+	color = { 70 130 180 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { new_hampshirite }
+	capital = STATE_NEW_HAMPSHIRE
+}
+
+VMT = {
+	color = { 176 48 96 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { vermonter }
+	capital = STATE_VERMONT
+}
+
+RIS = {
+	color = { 123 104 238 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { rhode_islander }
+	capital = STATE_RHODE_ISLAND
+}
+
+CNC = {
+	color = { 240 230 140 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { connecticutian }
+	capital = STATE_CONNECTICUT
+}
+
+NYK = {
+	color = { 154 205 50 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { new_yorker }
+	capital = STATE_NEW_YORK
+}
+
+NJR = {
+	color = { 255 140 0 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { new_jerseyite }
+	capital = STATE_NEW_JERSEY
+}
+
+PSY = {
+	color = { 144 238 144 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { pennsylvanian }
+	capital = STATE_PENNSYLVANIA
+}
+
+MNE = {
+	color = { 255 198 130 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { mainer }
+	capital = STATE_MAINE
+}
+
+OHO = {
+	color = { 255 165 142 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { ohian }
+	capital = STATE_OHIO
+}
+
+INA = {
+	color = { 255 232 142 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { indianian }
+	capital = STATE_INDIANA
+}
+
+ILN = {
+	color = { 199 255 196 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { illinoisian }
+	capital = STATE_ILLINOIS
+}
+
+MSR = {
+	color = { 147 240 255 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { missourian }
+	capital = STATE_MISSOURI
+}
+
+KTY = {
+	color = { 244 175 255 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { kentuckian }
+	capital = STATE_KENTUCKY
+}
+
+TSS = {
+	color = { 255 175 158 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { tennessean }
+	capital = STATE_TENNESSEE
+}
+
+ALA = {
+	color = { 250 255 114 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { alabamian }
+	capital = STATE_ALABAMA
+}
+
+MSP = {
+	color = { 193 255 198 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { mississippian }
+	capital = STATE_MISSISSIPPI
+}
+
+MYD = {
+	color = { 244 164 96 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { marylander }
+	capital = STATE_MARYLAND
+}
+
+DEL = {
+	color = { 216 191 216 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { delawarean }
+	capital = STATE_DELAWARE
+}
+
+VRA = {
+	color = { 255 215 0 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { virginian }
+	capital = STATE_VIRGINIA
+}
+
+NCR = {
+	color = { 143 188 143 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { north_carolinian }
+	capital = STATE_NORTH_CAROLINA
+}
+
+SCR = {
+	color = { 255 213 128 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { south_carolinian }
+	capital = STATE_SOUTH_CAROLINA
+}
+
+GGA = {
+	color = { 196 164 132 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { american_georgian }
+	capital = STATE_GEORGIA
+}

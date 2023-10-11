@@ -1,0 +1,143 @@
+﻿je_usa_collapse = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	complete = {
+			owns_entire_state_region = STATE_MAINE
+			owns_entire_state_region = STATE_NEW_HAMPSHIRE
+			owns_entire_state_region = STATE_VERMONT
+			owns_entire_state_region = STATE_MASSACHUSETTS
+			owns_entire_state_region = STATE_RHODE_ISLAND
+			owns_entire_state_region = STATE_CONNECTICUT
+			owns_entire_state_region = STATE_NEW_YORK
+			owns_entire_state_region = STATE_NEW_JERSEY
+			owns_entire_state_region = STATE_PENNSYLVANIA
+			owns_entire_state_region = STATE_OHIO
+			owns_entire_state_region = STATE_INDIANA
+			owns_entire_state_region = STATE_ILLINOIS
+			owns_entire_state_region = STATE_MISSOURI
+			owns_entire_state_region = STATE_KENTUCKY
+			owns_entire_state_region = STATE_VIRGINIA
+			owns_entire_state_region = STATE_MARYLAND
+			owns_entire_state_region = STATE_DELAWARE
+			owns_entire_state_region = STATE_TENNESSEE
+			owns_entire_state_region = STATE_NORTH_CAROLINA
+			owns_entire_state_region = STATE_SOUTH_CAROLINA
+			owns_entire_state_region = STATE_GEORGIA
+			owns_entire_state_region = STATE_ALABAMA
+			owns_entire_state_region = STATE_MISSISSIPPI
+			owns_entire_state_region = STATE_LOUISIANA
+	}
+
+	fail = {
+		OR = {
+			any_country = {
+				is_revolutionary = yes
+				country_definition = root.country_definition
+			}
+			AND = {
+				calc_true_if = {
+					amount <= 16
+					country_or_subject_owns_entire_state_region = STATE_MAINE
+					country_or_subject_owns_entire_state_region = STATE_NEW_HAMPSHIRE
+					country_or_subject_owns_entire_state_region = STATE_VERMONT
+					country_or_subject_owns_entire_state_region = STATE_MASSACHUSETTS
+					country_or_subject_owns_entire_state_region = STATE_RHODE_ISLAND
+					country_or_subject_owns_entire_state_region = STATE_CONNECTICUT
+					country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+					country_or_subject_owns_entire_state_region = STATE_NEW_YORK
+					country_or_subject_owns_entire_state_region = STATE_PENNSYLVANIA
+					country_or_subject_owns_entire_state_region = STATE_OHIO
+					country_or_subject_owns_entire_state_region = STATE_INDIANA
+					country_or_subject_owns_entire_state_region = STATE_ILLINOIS
+					country_or_subject_owns_entire_state_region = STATE_MISSOURI
+					country_or_subject_owns_entire_state_region = STATE_KENTUCKY
+					country_or_subject_owns_entire_state_region = STATE_VIRGINIA
+					country_or_subject_owns_entire_state_region = STATE_MARYLAND
+					country_or_subject_owns_entire_state_region = STATE_DELAWARE
+					country_or_subject_owns_entire_state_region = STATE_TENNESSEE
+					country_or_subject_owns_entire_state_region = STATE_NORTH_CAROLINA
+					country_or_subject_owns_entire_state_region = STATE_SOUTH_CAROLINA
+					country_or_subject_owns_entire_state_region = STATE_GEORGIA
+					country_or_subject_owns_entire_state_region = STATE_ALABAMA
+					country_or_subject_owns_entire_state_region = STATE_MISSISSIPPI
+					country_or_subject_owns_entire_state_region = STATE_LOUISIANA
+				}
+				NOT = { is_diplomatic_play_enemy_of = c:CSA }
+				NOT = { is_diplomatic_play_enemy_of = c:MNE }
+				NOT = { is_diplomatic_play_enemy_of = c:NHM }
+				NOT = { is_diplomatic_play_enemy_of = c:VMT }
+				NOT = { is_diplomatic_play_enemy_of = c:MCU }
+				NOT = { is_diplomatic_play_enemy_of = c:RIS }
+				NOT = { is_diplomatic_play_enemy_of = c:CNC }
+				NOT = { is_diplomatic_play_enemy_of = c:NYK }
+				NOT = { is_diplomatic_play_enemy_of = c:NJR }
+				NOT = { is_diplomatic_play_enemy_of = c:PSY }
+				NOT = { is_diplomatic_play_enemy_of = c:OHO }
+				NOT = { is_diplomatic_play_enemy_of = c:INA }
+				NOT = { is_diplomatic_play_enemy_of = c:ILN }
+				NOT = { is_diplomatic_play_enemy_of = c:MSR }
+				NOT = { is_diplomatic_play_enemy_of = c:KTY }
+				NOT = { is_diplomatic_play_enemy_of = c:VRA }
+				NOT = { is_diplomatic_play_enemy_of = c:MYD }
+				NOT = { is_diplomatic_play_enemy_of = c:DEL }
+				NOT = { is_diplomatic_play_enemy_of = c:NCR }
+				NOT = { is_diplomatic_play_enemy_of = c:TSS }
+				NOT = { is_diplomatic_play_enemy_of = c:SCR }
+				NOT = { is_diplomatic_play_enemy_of = c:GGA }
+				NOT = { is_diplomatic_play_enemy_of = c:ALA }
+				NOT = { is_diplomatic_play_enemy_of = c:MSP }
+				NOT = { is_diplomatic_play_enemy_of = c:LOU }
+				NOT = { has_war_with = c:CSA }
+				NOT = { has_war_with = c:FSA }
+				NOT = { has_war_with = c:CSA }
+				NOT = { has_war_with = c:MNE }
+				NOT = { has_war_with = c:NHM }
+				NOT = { has_war_with = c:VMT }
+				NOT = { has_war_with = c:MCU }
+				NOT = { has_war_with = c:RIS }
+				NOT = { has_war_with = c:CNC }
+				NOT = { has_war_with = c:NYK }
+				NOT = { has_war_with = c:NJR }
+				NOT = { has_war_with = c:PSY }
+				NOT = { has_war_with = c:OHO }
+				NOT = { has_war_with = c:INA }
+				NOT = { has_war_with = c:ILN }
+				NOT = { has_war_with = c:MSR }
+				NOT = { has_war_with = c:KTY }
+				NOT = { has_war_with = c:VRA }
+				NOT = { has_war_with = c:MYD }
+				NOT = { has_war_with = c:DEL }
+				NOT = { has_war_with = c:NCR }
+				NOT = { has_war_with = c:TSS }
+				NOT = { has_war_with = c:SCR }
+				NOT = { has_war_with = c:GGA }
+				NOT = { has_war_with = c:ALA }
+				NOT = { has_war_with = c:MSP }
+				NOT = { has_war_with = c:LOU }
+			}
+			scaled_debt >= 0.80
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = fae_usa.1 days = 0 popup = yes }
+	}
+
+	on_fail = {
+		random_diplomatic_play = {
+			limit = {
+				any_scope_play_involved = {
+					THIS = ROOT
+				}
+			}
+			save_scope_as = cur_play
+		}
+		scope:cur_play = {
+			resolve_play_for = ROOT
+		}
+		trigger_event = { id = fae_usa.2 days = 0 popup = yes }
+	}
+
+	weight = 100
+	should_be_pinned_by_default = yes
+}

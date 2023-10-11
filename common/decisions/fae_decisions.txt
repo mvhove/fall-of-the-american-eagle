@@ -1,0 +1,21 @@
+﻿fae_lore_decision = {
+	is_shown = {
+		is_player = yes
+		game_date = 1836.1.1
+	}
+
+	possible = {
+		is_player = yes
+		game_date = 1836.1.1
+	}
+	
+	when_taken = {
+		c:USA = {
+			save_scope_as = usa_scope
+		}
+		trigger_event = { id = fae_usa.3 popup = yes }
+	}
+
+	ai_chance = {
+	}
+}

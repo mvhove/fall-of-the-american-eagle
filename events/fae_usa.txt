@@ -1,0 +1,1235 @@
+﻿namespace = fae_usa
+
+fae_usa.1 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	title = fae_usa.1.t
+	desc = fae_usa.1.d
+	flavor = fae_usa.1.f
+	
+	duration = 1
+	
+	option = {
+		name = fae_usa.1.a
+		default_option = yes
+
+		s:STATE_MAINE = {
+			remove_homeland = mainer
+			add_homeland = yankee
+		}
+		s:STATE_NEW_HAMPSHIRE = {
+			remove_homeland = new_hampshirite
+			add_homeland = yankee
+		}
+		s:STATE_VERMONT = {
+			remove_homeland = vermonter
+			add_homeland = yankee
+		}
+		s:STATE_MASSACHUSETTS = {
+			remove_homeland = massachusettsian
+			add_homeland = yankee
+		}
+		s:STATE_RHODE_ISLAND = {
+			remove_homeland = rhode_islander
+			add_homeland = yankee
+		}
+		s:STATE_CONNECTICUT = {
+			remove_homeland = connecticutian
+			add_homeland = yankee
+		}
+		s:STATE_NEW_YORK = {
+			remove_homeland = new_yorker
+			add_homeland = yankee
+		}
+		s:STATE_NEW_JERSEY = {
+			remove_homeland = new_jerseyite
+			add_homeland = yankee
+		}
+		s:STATE_PENNSYLVANIA = {
+			remove_homeland = pennsylvanian
+			add_homeland = yankee
+		}
+		s:STATE_OHIO = {
+			remove_homeland = ohian
+			add_homeland = yankee
+		}
+		s:STATE_INDIANA = {
+			remove_homeland = indianian
+			add_homeland = yankee
+		}
+		s:STATE_ILLINOIS = {
+			remove_homeland = illinoisian
+			add_homeland = yankee
+		}
+		s:STATE_MISSOURI = {
+			remove_homeland = missourian
+			add_homeland = dixie
+			# add_homeland = yankee
+		}
+		s:STATE_KENTUCKY = {
+			remove_homeland = kentuckian
+			add_homeland = dixie
+			# add_homeland = yankee
+		}
+		s:STATE_VIRGINIA = {
+			remove_homeland = virginian
+			add_homeland = dixie
+		}
+		s:STATE_WEST_VIRGINIA = {
+			remove_homeland = virginian
+			add_homeland = dixie
+		}
+		s:STATE_DISTRICT_OF_COLUMBIA = {
+			remove_homeland = columbian
+			add_homeland = dixie
+		}
+		s:STATE_MARYLAND = {
+			remove_homeland = marylander
+			add_homeland = dixie
+		}
+		s:STATE_DELAWARE = {
+			remove_homeland = delawarean
+			add_homeland = dixie
+		}
+		s:STATE_NORTH_CAROLINA = {
+			remove_homeland = north_carolinian
+			add_homeland = dixie
+		}
+		s:STATE_TENNESSEE = {
+			remove_homeland = tennessean
+			add_homeland = dixie
+			# add_homeland = yankee
+		}
+		s:STATE_SOUTH_CAROLINA = {
+			remove_homeland = south_carolinian
+			add_homeland = dixie
+		}
+		s:STATE_GEORGIA = {
+			remove_homeland = american_georgian
+			add_homeland = dixie
+		}
+		s:STATE_ALABAMA = {
+			remove_homeland = alabamian
+			add_homeland = dixie
+		}
+		s:STATE_MISSISSIPPI = {
+			remove_homeland = mississippian
+			add_homeland = dixie
+		}
+		s:STATE_LOUISIANA = {
+			remove_homeland = louisianian
+			add_homeland = dixie
+		}
+		s:STATE_TEXAS = {
+			remove_homeland = texian
+			add_homeland = dixie
+		}
+		s:STATE_NEW_MEXICO = {
+			remove_homeland = texian
+			add_homeland = dixie
+		}
+
+		remove_primary_culture = cu:mainer
+		remove_primary_culture = cu:new_hampshirite
+		remove_primary_culture = cu:vermonter
+		remove_primary_culture = cu:massachusettsian
+		remove_primary_culture = cu:rhode_islander
+		remove_primary_culture = cu:connecticutian
+		remove_primary_culture = cu:new_yorker
+		remove_primary_culture = cu:new_jerseyite
+		remove_primary_culture = cu:pennsylvanian
+		remove_primary_culture = cu:ohian
+		remove_primary_culture = cu:indianian
+		remove_primary_culture = cu:illinoisian
+		remove_primary_culture = cu:missourian
+		remove_primary_culture = cu:kentuckian
+		remove_primary_culture = cu:virginian
+		remove_primary_culture = cu:columbian
+		remove_primary_culture = cu:marylander
+		remove_primary_culture = cu:delawarean
+		remove_primary_culture = cu:north_carolinian
+		remove_primary_culture = cu:tennessean
+		remove_primary_culture = cu:south_carolinian
+		remove_primary_culture = cu:american_georgian
+		remove_primary_culture = cu:alabamian
+		remove_primary_culture = cu:mississippian
+		remove_primary_culture = cu:louisianian
+		remove_primary_culture = cu:texian
+	}
+}
+
+fae_usa.2 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	
+	title = fae_usa.2.t
+	desc = fae_usa.2.d
+	flavor = fae_usa.2.f
+	
+	duration = 1
+	
+	option = {
+		name = fae_usa.2.a
+		default_option = yes
+		every_subject_or_below = {
+			make_independent = yes
+		}
+		s:STATE_MAINE = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = MNE
+					origin = c:USA
+					state = s:STATE_MAINE.region_state:USA
+				}
+			}
+		}
+		s:STATE_NEW_HAMPSHIRE = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = NHM
+					origin = c:USA
+					state = s:STATE_NEW_HAMPSHIRE.region_state:USA
+				}
+			}
+		}
+		s:STATE_VERMONT = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = VMT
+					origin = c:USA
+					state = s:STATE_VERMONT.region_state:USA
+				}
+			}
+		}
+		s:STATE_MASSACHUSETTS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = MCU
+					origin = c:USA
+					state = s:STATE_MASSACHUSETTS.region_state:USA
+				}
+			}
+		}
+		s:STATE_RHODE_ISLAND = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = RIS
+					origin = c:USA
+					state = s:STATE_RHODE_ISLAND.region_state:USA
+				}
+			}
+		}
+		s:STATE_CONNECTICUT = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = CNC
+					origin = c:USA
+					state = s:STATE_CONNECTICUT.region_state:USA
+				}
+			}
+		}
+		s:STATE_NEW_YORK = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = NYK
+					origin = c:USA
+					state = s:STATE_NEW_YORK.region_state:USA
+				}
+			}
+		}
+		s:STATE_NEW_JERSEY = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = NJR
+					origin = c:USA
+					state = s:STATE_NEW_JERSEY.region_state:USA
+				}
+			}
+		}
+		s:STATE_PENNSYLVANIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = PSY
+					origin = c:USA
+					state = s:STATE_PENNSYLVANIA.region_state:USA
+				}
+			}
+		}
+		s:STATE_OHIO = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = OHO
+					origin = c:USA
+					state = s:STATE_OHIO.region_state:USA
+				}
+			}
+		}
+		s:STATE_INDIANA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = INA
+					origin = c:USA
+					state = s:STATE_INDIANA.region_state:USA
+				}
+			}
+		}
+		s:STATE_ILLINOIS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = ILN
+					origin = c:USA
+					state = s:STATE_ILLINOIS.region_state:USA
+				}
+			}
+		}
+		s:STATE_MISSOURI = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = MSR
+					origin = c:USA
+					state = s:STATE_MISSOURI.region_state:USA
+				}
+			}
+		}
+		s:STATE_KENTUCKY = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = KTY
+					origin = c:USA
+					state = s:STATE_KENTUCKY.region_state:USA
+				}
+			}
+		}
+		s:STATE_VIRGINIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				if = {
+					limit = {
+						exists = c:VRA
+					}
+					set_state_owner = c:VRA
+				}
+				else = {
+					create_country = {
+						tag = VRA
+						origin = c:USA
+						state = s:STATE_VIRGINIA.region_state:USA
+						state = s:STATE_WEST_VIRGINIA.region_state:USA
+					}
+				}
+			}
+		}
+		s:STATE_WEST_VIRGINIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				if = {
+					limit = {
+						exists = c:VRA
+					}
+					set_state_owner = c:VRA
+				}
+				else = {
+					create_country = {
+						tag = VRA
+						origin = c:USA
+						state = s:STATE_VIRGINIA.region_state:USA
+						state = s:STATE_WEST_VIRGINIA.region_state:USA
+					}
+				}
+			}
+		}
+		s:STATE_MARYLAND = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = MYD
+					origin = c:USA
+					state = s:STATE_MARYLAND.region_state:USA
+				}
+			}
+		}
+		s:STATE_DELAWARE = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = DEL
+					origin = c:USA
+					state = s:STATE_DELAWARE.region_state:USA
+				}
+			}
+		}
+		s:STATE_NORTH_CAROLINA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = NCR
+					origin = c:USA
+					state = s:STATE_NORTH_CAROLINA.region_state:USA
+				}
+			}
+		}
+		s:STATE_SOUTH_CAROLINA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = SCR
+					origin = c:USA
+					state = s:STATE_SOUTH_CAROLINA.region_state:USA
+				}
+			}
+		}
+		s:STATE_GEORGIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = GGA
+					origin = c:USA
+					state = s:STATE_GEORGIA.region_state:USA
+				}
+			}
+		}
+		s:STATE_ALABAMA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = ALA
+					origin = c:USA
+					state = s:STATE_ALABAMA.region_state:USA
+				}
+			}
+		}
+		s:STATE_MISSISSIPPI = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = MSP
+					origin = c:USA
+					state = s:STATE_MISSISSIPPI.region_state:USA
+				}
+			}
+		}
+		s:STATE_LOUISIANA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				create_country = {
+					tag = LOU
+					origin = c:USA
+					state = s:STATE_LOUISIANA.region_state:USA
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = c:TEX
+			}
+			s:STATE_TEXAS = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					set_state_owner = c:TEX
+				}
+			}
+		}
+		else = {
+			s:STATE_TEXAS = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					create_country = {
+						tag = TEX
+						origin = c:USA
+						state = s:STATE_TEXAS.region_state:USA
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = c:SEQ
+			}
+			s:STATE_OKLAHOMA = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					set_state_owner = c:SEQ
+				}
+			}
+		}
+		else = {
+			s:STATE_OKLAHOMA = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					create_country = {
+						tag = SEQ
+						origin = c:USA
+						state = s:STATE_OKLAHOMA.region_state:USA
+					}
+				}
+			}
+		}
+		# this is where stuff may break
+		s:STATE_ARKANSAS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				if = {
+					limit = { 
+						any_scope_pop = {
+							culture = cu:cherokee
+						}
+					}
+					set_state_owner = c:SEQ
+				}
+				else = {
+					set_state_owner = c:LOU
+				}
+			}
+		}
+		s:STATE_FLORIDA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:GGA
+			}
+		}
+		s:STATE_KANSAS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:MSR
+			}
+		}
+		s:STATE_KANSAS = {
+			add_claim = c:MSR
+		}
+		s:STATE_COLORADO = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:MSR
+			}
+		}
+		s:STATE_COLORADO = {
+			add_claim = c:MSR
+		}
+		s:STATE_NEW_MEXICO = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:TEX
+			}
+		}
+		create_country = {
+			tag = DES
+			origin = c:USA
+			state = s:STATE_UTAH.region_state:USA
+			state = s:STATE_ARIZONA.region_state:USA
+		}
+		create_country = {
+			tag = CAL
+			origin = c:USA
+			state = s:STATE_CALIFORNIA.region_state:USA
+			state = s:STATE_NEVADA.region_state:USA
+			state = s:STATE_BAJA_CALIFORNIA.region_state:USA
+		}
+		create_country = {
+			tag = UOM
+			origin = c:USA
+			state = s:STATE_MICHIGAN.region_state:USA
+			state = s:STATE_WISCONSIN.region_state:USA
+			state = s:STATE_IOWA.region_state:USA
+		}
+		c:UOM = {
+			activate_law = law_type:law_slavery_banned
+		}
+		s:STATE_NUNAVUT = {
+			random_scope_state = {
+				owner = {
+					save_scope_as = nunavut_scope
+				}
+			}
+		}
+		s:STATE_MINNESOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_ALASKA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = scope:nunavut_scope
+			}
+		}
+		s:STATE_MINNESOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_NEBRASKA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_NEBRASKA = {
+			add_claim = c:UOM
+		}
+		s:STATE_SOUTH_DAKOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_SOUTH_DAKOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_NORTH_DAKOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_NORTH_DAKOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_MONTANA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_MONTANA = {
+			add_claim = c:UOM
+		}
+		s:STATE_WYOMING = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_WYOMING = {
+			add_claim = c:UOM
+		}
+		s:STATE_OKLAHOMA = {
+			add_claim = c:SEQ
+		}
+		if = {
+			limit = {
+				exists = c:ORG
+			}
+			s:STATE_IDAHO = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					set_state_owner = c:ORG
+				}
+			}
+			s:STATE_WASHINGTON = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					set_state_owner = c:ORG
+				}
+			}
+			s:STATE_OREGON = {
+				random_scope_state = {
+					limit = {
+						owner = {
+							c:USA = THIS
+						}
+					}
+					set_state_owner = c:ORG
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = ORG
+				origin = c:USA
+				state = s:STATE_OREGON.region_state:USA
+				state = s:STATE_WASHINGTON.region_state:USA
+				state = s:STATE_IDAHO.region_state:USA
+			}
+			c:ORG = {
+				activate_law = law_type:law_slavery_banned
+			}
+		}
+		s:STATE_DISTRICT_OF_COLUMBIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:MYD
+			}
+		}
+		c:GBR = {
+				annex = c:USA
+		}
+	}
+}
+
+fae_usa.3 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	
+	title = fae_usa.3.t
+	desc = fae_usa.3.d
+	
+	duration = 1
+	
+	trigger = {
+		game_date = 1836.1.1
+		is_player = yes
+	}
+
+	option = {
+		name = fae_usa.3.a
+		default_option = yes
+	}
+	
+	option = {
+		name = fae_usa.3.b
+		default_option = no
+		c:USA = {
+			every_subject_or_below = {
+				make_independent = yes
+			}
+		}
+		s:STATE_ARKANSAS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:SEQ
+			}
+		}
+		s:STATE_FLORIDA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:GGA
+			}
+		}
+		s:STATE_KANSAS = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:MSR
+			}
+		}
+		s:STATE_KANSAS = {
+			add_claim = c:MSR
+		}
+		s:STATE_COLORADO = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:MSR
+			}
+		}
+		s:STATE_COLORADO = {
+			add_claim = c:MSR
+		}
+		create_country = {
+			tag = UOM
+			origin = c:USA
+			state = s:STATE_MICHIGAN.region_state:USA
+			state = s:STATE_WISCONSIN.region_state:USA
+			state = s:STATE_IOWA.region_state:USA
+		}
+		c:UOM = {
+			activate_law = law_type:law_slavery_banned
+		}
+		s:STATE_MINNESOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_MINNESOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_NEBRASKA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_NEBRASKA = {
+			add_claim = c:UOM
+		}
+		s:STATE_SOUTH_DAKOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_SOUTH_DAKOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_NORTH_DAKOTA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_NORTH_DAKOTA = {
+			add_claim = c:UOM
+		}
+		s:STATE_MONTANA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_MONTANA = {
+			add_claim = c:UOM
+		}
+		s:STATE_WYOMING = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						c:USA = THIS
+					}
+				}
+				set_state_owner = c:UOM
+			}
+		}
+		s:STATE_WYOMING = {
+			add_claim = c:UOM
+		}
+		s:STATE_OKLAHOMA = {
+			add_claim = c:SEQ
+		}
+		s:STATE_DISTRICT_OF_COLUMBIA = {
+			random_scope_state = {
+				limit = {
+					owner = {
+						OR = {
+							c:USA = THIS
+							is_subject_of = c:USA
+						}
+					}
+				}
+				set_state_owner = c:MYD
+			}
+		}
+		c:NYK = {
+			create_character = {
+				first_name = Martin
+				last_name = Van_Buren
+				historical = yes
+				culture = cu:new_yorker
+				birth_date = 1782.12.5
+				ig_leader = yes
+				interest_group = ig_rural_folk
+				ideology = ideology_jacksonian_democrat
+				traits = {
+					experienced_political_operator
+					meticulous
+					ambitious
+				}
+			}
+			create_character = {
+				first_name = Cornelius
+				last_name = Vanderbilt
+				historical = yes
+				culture = cu:new_yorker
+				birth_date = 1794.5.27
+				ig_leader = yes
+				interest_group = ig_industrialists
+				ideology = ideology_moderate
+				traits = {
+					basic_political_operator
+					expensive_tastes
+					meticulous
+				}
+			}
+		}
+		c:SCR = {
+			create_character = {
+				first_name = John
+				last_name = Calhoun
+				historical = yes
+				culture = cu:south_carolinian
+				birth_date = 1782.3.18
+				ig_leader = yes
+				interest_group = ig_landowners
+				ideology = ideology_slaver
+				traits = {
+					bigoted
+					experienced_political_operator
+				}
+			}
+		}
+		c:KTY = {
+			create_character = {
+				first_name = Henry
+				last_name = Clay
+				historical = yes
+				culture = cu:virginian
+				birth_date = 1777.4.12
+				ig_leader = yes
+				interest_group = ig_intelligentsia
+				ideology = ideology_pacifist
+				traits = {
+					meticulous
+					experienced_political_operator
+				}
+			}
+			create_character = {
+				is_general = yes
+				first_name = Zachary
+				last_name = Taylor
+				historical = yes
+				culture = cu:virginian
+				birth_date = 1784.11.24
+				interest_group = ig_landowners
+				ideology = ideology_moderate
+				hq = region_the_midwest
+				traits = {
+					experienced_offensive_planner
+					direct
+					innovative
+				}
+			}
+		}
+
+		c:MCU = {
+			create_character = {
+				
+				first_name = Daniel
+				last_name = Webster
+				historical = yes
+				culture = cu:new_hampshirite
+				birth_date = 1782.1.18
+				ig_leader = yes
+				interest_group = ig_petty_bourgeoisie
+				ideology = ideology_moderate
+				traits = {
+					arrogant
+					inspirational_orator
+					experienced_political_operator
+				}
+			}
+			create_character = {
+				first_name = Robert
+				last_name = Rantoul
+				historical = yes
+				culture = cu:massachusettsian
+				birth_date = 1805.8.13
+				ig_leader = yes
+				interest_group = ig_trade_unions
+				ideology = ideology_moderate
+				traits = {
+					meticulous
+					basic_political_operator
+					erudite
+				}
+			}
+		}
+		c:OHO = {
+			create_character = {
+				first_name = Charles
+				last_name = Finney
+				historical = yes
+				culture = cu:connecticutian
+				birth_date = 1792.8.29
+				ig_leader = yes
+				interest_group = ig_devout
+				ideology = ideology_abolitionist
+				traits = {
+					pious
+					cautious
+					basic_political_operator
+				}
+			}
+		}
+		c:NJR = {
+			create_character = {
+				first_name = Winfield
+				last_name = Scott
+				historical = yes
+				culture = cu:virginian
+				birth_date = 1786.6.13
+				is_general = yes
+				ig_leader = yes
+				interest_group = ig_armed_forces
+				ideology = ideology_jingoist_leader
+				hq = region_new_england
+				commander_rank = commander_rank_2
+				traits = {
+					traditionalist_commander
+					basic_diplomat
+					cautious
+				}
+			}
+			create_character = { # USA, Admiral
+				is_admiral = yes
+				first_name = Elie_Augustus_Frederick
+				last_name = Lavallette
+				historical = yes
+				culture = cu:virginian
+				interest_group = ig_landowners
+				ideology = ideology_moderate
+				birth_date = 1776.2.9
+				hq = region_dixie
+				traits = {
+					brave
+					basic_naval_commander
+				}
+			}
+		}
+		c:MYD = {
+			create_character = { # Sea
+				is_admiral = yes
+				first_name = Isaac
+				last_name = Hull
+				historical = yes
+				culture = cu:connecticutian
+				birth_date = 1773.3.9
+				interest_group = ig_industrialists
+				ideology = ideology_moderate
+				hq = region_new_england
+				commander_rank = commander_rank_2
+				traits = {
+					expert_naval_commander
+					dockyard_master
+					arrogant
+				}
+			}
+		}
+		c:MSR = {
+			activate_law = law_type:law_colonial_resettlement
+		}
+	}
+}

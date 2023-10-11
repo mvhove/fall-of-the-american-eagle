@@ -1,0 +1,2025 @@
+﻿namespace = acw_followup_events
+
+# The Assassination of Abraham Lincoln
+acw_followup_events.1 = {
+	type = country_event
+
+	left_icon = ruler
+
+	title = acw_followup_events.1.t
+	desc = acw_followup_events.1.d
+	flavor = acw_followup_events.1.f
+
+
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:USA
+		c:USA = ROOT
+		NOT = { has_variable = fords_theatre }
+		ruler = {
+			has_variable = abraham_lincoln
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = fords_theatre
+			value = yes
+		}
+		random_scope_character = {
+			limit = {
+				has_variable = abraham_lincoln
+			}
+			save_scope_as = lincoln_proxy
+			interest_group = {
+				save_scope_as = lincoln_proxy_ig
+			}
+		}
+	}
+
+	option = {
+		name = acw_followup_events.1.a
+        default_option = yes
+
+		scope:lincoln_proxy = {
+			kill_character = yes
+		}
+		scope:lincoln_proxy_ig = {
+			add_modifier = {
+				name = lincoln_martyred
+				months = normal_modifier_time
+			}
+		}
+	}
+}
+
+# The Failed Assassination of Abraham Lincoln
+acw_followup_events.2 = {
+	type = country_event
+
+	left_icon = ruler
+
+	title = acw_followup_events.2.t
+	desc = acw_followup_events.2.d
+	flavor = acw_followup_events.2.f
+
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:USA
+		c:USA = ROOT
+		NOT = { has_variable = fords_theatre }
+		ruler = {
+			has_variable = abraham_lincoln
+		}
+	}
+
+	immediate = {
+		set_variable = fords_theatre
+		random_scope_character = {
+			limit = {
+				has_variable = abraham_lincoln
+			}
+			save_scope_as = lincoln_proxy
+			interest_group = {
+				save_scope_as = lincoln_proxy_ig
+			}
+		}
+	}
+
+	option = {
+		name = acw_followup_events.2.a
+        default_option = yes
+
+		scope:lincoln_proxy_ig = {
+			add_modifier = {
+				name = lincoln_survives
+				months = normal_modifier_time
+			}
+		}
+	}
+}
+
+# Abraham Lincoln beats up John Wilkes Booth
+acw_followup_events.3 = {
+	type = country_event
+
+	left_icon = ruler
+
+	title = acw_followup_events.3.t
+	desc = acw_followup_events.3.d
+	flavor = acw_followup_events.3.f
+
+	event_image = {
+		video = "southamerica_public_figure_assassination"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:USA
+		c:USA = ROOT
+		NOT = { has_variable = fords_theatre }
+		ruler = {
+			has_variable = abraham_lincoln
+			OR = {
+				has_trait = brave
+				has_trait = wrathful
+				has_trait = explorer
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = fords_theatre
+			value = yes
+		}
+		random_scope_character = {
+			limit = {
+				has_variable = abraham_lincoln
+			}
+			save_scope_as = lincoln_proxy
+			interest_group = {
+				save_scope_as = lincoln_proxy_ig
+			}
+		}
+	}
+
+	option = {
+		name = acw_followup_events.3.a
+        default_option = yes
+
+		scope:lincoln_proxy_ig = {
+			add_modifier = {
+				name = lincoln_aggressively_survives
+				months = normal_modifier_time
+			}
+		}
+		scope:lincoln_proxy = {
+			add_modifier = {
+				name = lincoln_aggressively_survives_ruler
+				months = normal_modifier_time
+			}
+		}
+	}
+}
+
+# Forty Acres and a Mule
+acw_followup_events.4 = {
+	type = country_event
+
+	title = acw_followup_events.4.t
+	desc = acw_followup_events.4.d
+	flavor = acw_followup_events.4.f
+
+	event_image = {
+		video = "southamerica_war_civilians"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = { # JE pulse
+		any_scope_state = {
+			has_modifier = unreconstructed_state
+			state_region = { 
+				is_homeland = cu:afro_american 
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = { 
+				has_modifier = unreconstructed_state
+				state_region = { 
+					is_homeland = cu:afro_american 
+				}
+			}
+			save_scope_as = land_redistribution_state
+		}
+	}
+
+	option = {
+		name = acw_followup_events.4.a
+		default_option = yes
+
+		scope:land_redistribution_state = {
+			add_culture_standard_of_living_modifier = {
+				culture = cu:afro_american
+				months = normal_modifier_time
+				multiplier = 1
+			}
+			add_loyalists_in_state = {
+				culture = cu:afro_american
+				value = 0.1
+			}
+			add_radicals_in_state = {
+				value = 0.25
+				culture = cu:dixie
+				strata = rich
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:delawarean
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:marylander
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:virginian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:kentuckian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:missourian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:tennessean
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:north_carolinian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:south_carolinian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:american_georgian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:alabamian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:mississippian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:louisianian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.25
+					culture = cu:texian
+					strata = rich
+				}
+			}
+		}
+	}
+
+
+	option = {
+		name = acw_followup_events.4.b
+
+		scope:land_redistribution_state = {
+			add_radicals_in_state = {
+				culture = cu:afro_american
+				value = 0.1
+			}
+			add_loyalists_in_state = {
+				value = 0.25
+				culture = cu:dixie
+				strata = rich
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:delawarean
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:marylander
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:virginian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:kentuckian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:missourian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:tennessean
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:north_carolinian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:south_carolinian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:american_georgian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:alabamian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:mississippian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:louisianian
+					strata = rich
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.25
+					culture = cu:texian
+					strata = rich
+				}
+			}
+		}
+	}
+}
+
+# Supremacist Violence
+acw_followup_events.5 = {
+	type = country_event
+
+	title = acw_followup_events.5.t
+	desc = acw_followup_events.5.d
+	flavor = acw_followup_events.5.f
+
+	event_image = {
+		video = "southamerica_war_civilians"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = { # JE pulse
+		any_scope_state = {
+			any_scope_pop = {
+				culture = cu:afro_american
+			}
+			has_modifier = unreconstructed_state
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = { 
+				has_modifier = unreconstructed_state
+				any_scope_pop = {
+					culture = cu:afro_american
+				}
+			}
+			save_scope_as = supremacist_violence_state
+		}
+	}
+
+
+	option = {
+		name = acw_followup_events.5.a
+		default_option = yes
+
+		scope:supremacist_violence_state = {
+			add_culture_standard_of_living_modifier = {
+				culture = cu:afro_american
+				months = normal_modifier_time
+				multiplier = 1
+			}
+			add_loyalists_in_state = {
+				culture = cu:afro_american
+				value = 0.1
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:texian
+				}
+			}
+		}
+	}
+
+	option = {
+		name = acw_followup_events.5.b
+
+		scope:supremacist_violence_state = {
+			add_culture_standard_of_living_modifier = {
+				culture = cu:afro_american
+				months = normal_modifier_time
+				multiplier = -1
+			}
+			add_radicals_in_state = {
+				culture = cu:afro_american
+				value = 0.05
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = cu:texian
+				}
+			}
+		}
+	}
+}
+
+# Redeemer Government
+acw_followup_events.6 = {
+	type = country_event
+
+	title = acw_followup_events.6.t
+	desc = acw_followup_events.6.d
+	flavor = acw_followup_events.6.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = { # JE pulse
+		any_scope_state = {
+			has_modifier = unreconstructed_state
+			state_region = { 
+				has_variable = state_will_secede
+			}
+			NOR = {
+				has_modifier = redeemer_government
+				has_modifier = reconstruction_government
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = { 
+				has_modifier = unreconstructed_state
+				state_region = { 
+					has_variable = state_will_secede
+				}
+				NOR = {
+					has_modifier = redeemer_government
+					has_modifier = reconstruction_government
+				}
+			}
+			save_scope_as = redeemer_state
+		}
+	}
+
+	option = {
+		name = acw_followup_events.6.a
+		default_option = yes
+
+		scope:redeemer_state = {
+			add_modifier = {
+				name = redeemer_government
+				months = normal_modifier_time
+			}
+			add_radicals_in_state = {
+				culture = cu:afro_american
+				value = 0.1
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:texian
+				}
+			}
+		}
+	}
+
+	option = {
+		name = acw_followup_events.6.b
+
+		scope:redeemer_state = {
+			add_modifier = {
+				name = reconstruction_government
+				months = normal_modifier_time
+			}
+			add_loyalists_in_state = {
+				culture = cu:afro_american
+				value = 0.1
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:texian
+				}
+			}
+		}
+	}
+}
+
+# Paramilitary Intimidation
+acw_followup_events.7 = {
+	type = country_event
+
+	title = acw_followup_events.7.t
+	desc = acw_followup_events.7.d
+	flavor = acw_followup_events.7.f
+
+	event_image = {
+		video = "unspecific_vandalized_storefront"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = { # JE pulse
+		any_scope_state = {
+			has_modifier = unreconstructed_state
+			state_region = { 
+				has_variable = state_will_secede
+			}
+			NOR = {
+				has_modifier = paramilitary_threats
+				has_modifier = paramilitaries_suppressed
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = { 
+				has_modifier = unreconstructed_state
+				state_region = { 
+					has_variable = state_will_secede
+				}
+			}
+			save_scope_as = paramilitary_intimidation_state
+		}
+	}
+	
+	option = {
+		name = acw_followup_events.7.a
+		default_option = yes
+
+		scope:paramilitary_intimidation_state = {
+			add_culture_standard_of_living_modifier = {
+				culture = cu:afro_american
+				months = normal_modifier_time
+				multiplier = -1
+			}
+			add_modifier = {
+				name = paramilitary_threats
+				months = normal_modifier_time
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.2
+					culture = cu:texian
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = acw_followup_events.7.b
+
+		scope:paramilitary_intimidation_state = {
+			add_culture_standard_of_living_modifier = {
+				culture = cu:afro_american
+				months = normal_modifier_time
+				multiplier = -1
+			}
+			add_modifier = {
+				name = paramilitaries_suppressed
+				months = normal_modifier_time
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			if = {
+				limit = {
+					s:STATE_DELAWARE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:delawarean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MARYLAND = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:marylander
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_VIRGINIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:virginian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_KENTUCKY = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:kentuckian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSOURI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:missourian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TENNESSEE = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:tennessean
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_NORTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:north_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_SOUTH_CAROLINA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:south_carolinian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_GEORGIA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:american_georgian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_ALABAMA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:alabamian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_MISSISSIPPI = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:mississippian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_LOUISIANA = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:louisianian
+				}
+			}
+			if = {
+				limit = {
+					s:STATE_TEXAS = {
+						has_variable = state_will_secede
+					}
+				}
+				add_radicals_in_state = {
+					value = 0.2
+					culture = cu:texian
+				}
+			}
+		}
+	}
+}
+
+# Carpetbaggers
+acw_followup_events.8 = {
+	type = country_event
+
+	title = acw_followup_events.8.t
+	desc = acw_followup_events.8.d
+	flavor = acw_followup_events.8.f
+
+	event_image = {
+		video = "southamerica_war_civilians"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = { # JE pulse
+		any_scope_state = {
+			has_modifier = unreconstructed_state
+			state_region = { 
+				has_variable = state_will_secede
+			}
+			any_scope_pop = {
+				OR = {
+					culture = cu:yankee
+					culture = cu:mainer
+					culture = cu:new_hampshirite
+					culture = cu:vermonter
+					culture = cu:massachusettsian
+					culture = cu:rhode_islander
+					culture = cu:connecticutian
+					culture = cu:new_yorker
+					culture = cu:new_jerseyite
+					culture = cu:pennsylvanian
+					culture = cu:ohian
+					culture = cu:indianian
+					culture = cu:illinoisian
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = { 
+				has_modifier = unreconstructed_state
+				state_region = { 
+					has_variable = state_will_secede
+				}
+				any_scope_pop = {
+					OR = {
+						culture = cu:yankee
+						culture = cu:mainer
+						culture = cu:new_hampshirite
+						culture = cu:vermonter
+						culture = cu:massachusettsian
+						culture = cu:rhode_islander
+						culture = cu:connecticutian
+						culture = cu:new_yorker
+						culture = cu:new_jerseyite
+						culture = cu:pennsylvanian
+						culture = cu:ohian
+						culture = cu:indianian
+						culture = cu:illinoisian
+					}
+				}
+			}
+			save_scope_as = carpetbagger_state
+		}
+		random_scope_state = {
+			limit = { 
+				state_region = { 
+					OR = {
+						is_homeland = cu:yankee
+						is_homeland = cu:mainer
+						is_homeland = cu:new_hampshirite
+						is_homeland = cu:vermonter
+						is_homeland = cu:massachusettsian
+						is_homeland = cu:rhode_islander
+						is_homeland = cu:connecticutian
+						is_homeland = cu:new_yorker
+						is_homeland = cu:new_jerseyite
+						is_homeland = cu:pennsylvanian
+						is_homeland = cu:ohian
+						is_homeland = cu:indianian
+						is_homeland = cu:illinoisian
+					}
+				}
+			}
+			save_scope_as = carpetbagger_home
+		}
+	}
+	
+	option = {
+		name = acw_followup_events.8.a
+		default_option = yes
+
+		scope:carpetbagger_state = {
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:delawarean
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:marylander
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:virginian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:kentuckian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:missourian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:tennessean
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:north_carolinian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:south_carolinian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:american_georgian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:alabamian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:mississippian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:louisianian
+			}
+			add_loyalists_in_state = {
+				value = 0.2
+				culture = cu:texian
+			}
+		}
+		scope:carpetbagger_home = {
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:yankee
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:mainer
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:new_hampshirite
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:vermonter
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:massachusettsian
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:rhode_islander
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:connecticutian
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:new_yorker
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:new_jerseyite
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:pennsylvanian
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:ohian
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:indianian
+			}
+			add_radicals_in_state = {
+				value = 0.1
+				culture = cu:illinoisian
+			}
+		}
+	}
+	
+	option = {
+		name = acw_followup_events.8.b
+
+		scope:carpetbagger_state = {
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:dixie
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:delawarean
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:marylander
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:virginian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:kentuckian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:missourian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:tennessean
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:north_carolinian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:south_carolinian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:american_georgian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:alabamian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:mississippian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:louisianian
+			}
+			add_radicals_in_state = {
+				value = 0.2
+				culture = cu:texian
+			}
+		}
+		scope:carpetbagger_home = {
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:yankee
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:mainer
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:new_hampshirite
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:vermonter
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:massachusettsian
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:rhode_islander
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:connecticutian
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:new_yorker
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:new_jerseyite
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:pennsylvanian
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:ohian
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:indianian
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				culture = cu:illinoisian
+			}
+		}
+	}
+}

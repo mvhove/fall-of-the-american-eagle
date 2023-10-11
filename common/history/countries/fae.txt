@@ -1,0 +1,1024 @@
+﻿COUNTRIES = {
+	c:MCU = {
+		set_next_election_date = 1836.11.14
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_devout = { # Whig governor Edward Everett
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:VMT = {
+		set_next_election_date = 1836.11.14
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_industrialists = { # Whig governor Silas Jennison
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:NHM = {
+		set_next_election_date = 1836.10.6
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor William Badger
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:CNC = {
+		set_next_election_date = 1836.4.4
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Henry Edwards
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:RIS = {
+		set_next_election_date = 1836.4.20
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor John Francis
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:NYK = {
+		set_next_election_date = 1836.11.5
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor William Marcy
+			add_ruling_interest_group = yes
+		}
+	}
+
+	c:PSY = {
+		set_next_election_date = 1838.10.9
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_petty_bourgeoisie = { # Anti-Masonic governor Joseph Ritner
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	# No popular governor's elections until 1844
+	c:NJR = {
+		set_next_election_date = 1836.10.28
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Peter Vroon
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:MNE = {
+		set_next_election_date = 1836.09.12
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Robert Dunlap
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:OHO = {
+		set_next_election_date = 1836.10.11
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Robert Lucas
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:INA = {
+		set_next_election_date = 1837.8.7
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_industrialists = { # Whig governor Noah Noble
+			add_ruling_interest_group = yes
+		}
+	}
+
+	c:ILN = {
+		set_next_election_date = 1838.8.6
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Joseph Duncan
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:DEL = {
+		set_next_election_date = 1836.11.8
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Caleb Bennett
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	# No popular governor's elections until 1839
+	c:MYD = {
+		set_next_election_date = 1836.11.8
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_petty_bourgeoisie = { # Whig governor Thomas Veazey, technically not til Jan 14th but shrug
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	# No popular govenor's elections
+	c:VRA = {
+		set_next_election_date = 1836.3.1
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = { # Democratic governor Littleton Tazewell
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:NCR = {
+		set_next_election_date = 1836.8.4
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = { # Democratic governor Richard Spaight
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:SCR = {
+		set_next_election_date = 1836.12.10
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = { # Democratic governor George McDuffie
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:GGA = {
+		set_next_election_date = 1837.10.2
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = { # Democratic governor William Schley
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:LOU = {
+		set_next_election_date = 1838.7.4
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_petty_bourgeoisie = { # Whig governor Edward White
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:MSR = {
+		set_next_election_date = 1836.8.1
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_rural_folk = { # Democratic governor Daniel Dunklin
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:KTY = {
+		set_next_election_date = 1836.8.1
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_industrialists = { # Whig governor James Morehead
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:TSS = {
+		set_next_election_date = 1837.8.3
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_petty_bourgeoisie = { # Whig governor Newton Cannon
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:ALA = {
+		set_next_election_date = 1837.8.7
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_universal_suffrage
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_landowners = { # Democratic governor Hugh McVay
+			add_ruling_interest_group = yes
+		}
+	}
+	
+	c:MSP = {
+		set_next_election_date = 1837.11.7
+
+		set_tax_level = low
+		
+		effect_starting_technology_tier_1_tech = yes
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_no_womens_rights
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+		
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 2
+		}
+
+		ig:ig_petty_bourgeoisie = { # Whig governor John Quitman
+			add_ruling_interest_group = yes
+		}
+	}
+}

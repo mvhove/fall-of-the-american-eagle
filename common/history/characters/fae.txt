@@ -1,0 +1,450 @@
+﻿CHARACTERS = {
+	c:MNE = {
+		create_character = {
+			first_name = Robert
+			last_name = Dunlap
+			historical = yes
+			culture = cu:massachusettsian
+			birth_date = 1794.8.17
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:MCU = {
+		create_character = {
+			first_name = Edward
+			last_name = Everett
+			historical = yes
+			culture = cu:massachusettsian
+			birth_date = 1794.4.11
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_devout
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:NHM = {
+		create_character = {
+			first_name = William
+			last_name = Badger
+			historical = yes
+			culture = cu:new_hampshirite
+			birth_date = 1779.1.13
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:VMT = {
+		create_character = {
+			first_name = Silas
+			last_name = Jennison
+			historical = yes
+			culture = cu:vermonter
+			birth_date = 1791.5.17
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_industrialists
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:RIS = {
+		create_character = {
+			first_name = John
+			last_name = Francis
+			historical = yes
+			culture = cu:pennsylvanian
+			birth_date = 1791.5.31
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:CNC = {
+		create_character = {
+			first_name = Henry
+			last_name = Edwards
+			historical = yes
+			culture = cu:connecticutian
+			birth_date = 1779.10.14 # Only month known
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:NYK = {
+		create_character = {
+			first_name = William
+			last_name = Marcy
+			historical = yes
+			culture = cu:massachusettsian
+			birth_date = 1786.12.12
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:NJR = {
+		create_character = {
+			first_name = Peter
+			last_name = Vroom
+			historical = yes
+			culture = cu:new_jerseyite
+			birth_date = 1791.12.12
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:PSY = {
+		create_character = {
+			first_name = Joseph
+			last_name = Ritner
+			historical = yes
+			culture = cu:pennsylvanian
+			birth_date = 1780.3.25
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:DEL = {
+		create_character = {
+			first_name = Caleb
+			last_name = Bennett
+			historical = yes
+			culture = cu:pennsylvanian
+			birth_date = 1758.11.11
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:MYD = {
+		create_character = {
+			first_name = Thomas
+			last_name = Veazey
+			historical = yes
+			culture = cu:marylander
+			birth_date = 1774.1.31
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:OHO = {
+		create_character = {
+			first_name = Robert
+			last_name = Lucas
+			historical = yes
+			culture = cu:virginian
+			birth_date = 1781.4.1
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:INA = {
+		create_character = {
+			first_name = Noah
+			last_name = Noble
+			historical = yes
+			culture = cu:virginian
+			birth_date = 1794.1.15
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_industrialists
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:ILN = {
+		create_character = {
+			first_name = Joseph
+			last_name = Duncan
+			historical = yes
+			culture = cu:kentuckian
+			birth_date = 1794.2.22
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:MSR = {
+		create_character = {
+			first_name = Daniel
+			last_name = Dunklin
+			historical = yes
+			culture = cu:south_carolinian
+			birth_date = 1790.1.14
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:KTY = {
+		create_character = {
+			first_name = James
+			last_name = Morehead
+			historical = yes
+			culture = cu:kentuckian
+			birth_date = 1797.5.24
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_industrialists
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:VRA = {
+		create_character = {
+			first_name = Littleton
+			last_name = Tazewell
+			historical = yes
+			culture = cu:virginian
+			birth_date = 1774.12.17
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:NCR = {
+		create_character = {
+			first_name = Richard
+			last_name = Spaight
+			historical = yes
+			culture = cu:north_carolinian
+			birth_date = 1796.6.14 # Only year known
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:TSS = {
+		create_character = {
+			first_name = Newton
+			last_name = Cannon
+			historical = yes
+			culture = cu:north_carolinian
+			birth_date = 1781.5.22
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:SCR = {
+		create_character = {
+			first_name = George
+			last_name = McDuffie
+			historical = yes
+			culture = cu:georgian
+			birth_date = 1790.8.10
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:GGA = {
+		create_character = {
+			first_name = William
+			last_name = Schley
+			historical = yes
+			culture = cu:marylander
+			birth_date = 1786.12.15
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:ALA = {
+		create_character = {
+			first_name = Hugh
+			last_name = McVay
+			historical = yes
+			culture = cu:south_carolinian
+			birth_date = 1766.4.29
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:MSP = {
+		create_character = {
+			first_name = John
+			last_name = Quitman
+			historical = yes
+			culture = cu:new_yorker
+			birth_date = 1798.9.1
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+	}
+	
+	c:LOU = {
+		create_character = {
+			first_name = Edward
+			last_name = White
+			historical = yes
+			culture = cu:tennessean
+			birth_date = 1795.3.3
+			ig_leader = yes
+			ruler = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_moderate
+			traits = {
+				experienced_political_operator
+			}
+		}
+		# Assure all starting IG leaders are white
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_rural_folk
+			ideology = ideology_jacksonian_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_intelligentsia
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_devout
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_trade_unions
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_industrialists
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_armed_forces
+		}
+		create_character = {
+			ig_leader = yes
+			culture = cu:louisianian
+			interest_group = ig_landowners
+			ideology = ideology_slaver
+		}
+	}
+}
