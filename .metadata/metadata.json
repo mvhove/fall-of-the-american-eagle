@@ -1,7 +1,7 @@
 {
   "name" : "Fall of the American Eagle",
   "id" : "3048845225",
-  "version" : "1.0",
+  "version" : "1.0.1",
   "picture" : "thumbnail.png",
   "supported_game_version" : "1.5.*",
   "short_description" : "",
