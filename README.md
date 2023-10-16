@@ -1,5 +1,5 @@
 # fall-of-the-american-eagle
-***Designed and tested for 1.5.2 open beta***
+***Designed and tested for 1.5.3 open beta***
 ![Fall of the American Eagle Header](https://steamuserimages-a.akamaihd.net/ugc/2099297979451198590/E47035DC64939FB44B75ECCD2021DA9CBE368644/)
 
 After the assassination of President Jackson some five years ago, acting President Calhoun faced a significant crisis when South Carolina declared the Tariff of 1828 nullified. Despite opposition from Congress, he recognized this action as constitutional and opened pandora's box, reducing the power of the federal government to the point where today the individual states are borderline independent. Will this spell the end of the American experiment, be a temporary setback, or begin the rise of one of the disunited states in their own right?
