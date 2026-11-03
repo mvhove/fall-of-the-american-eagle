@@ -1,0 +1,4 @@
+common/**/*.txt linguist-language=HCL
+events/**/*.txt linguist-language=HCL
+gfx/**/*.gfx linguist-language=HCL
+gfx/**/*.asset linguist-language=HCL
